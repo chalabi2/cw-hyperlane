@@ -1,0 +1,103 @@
+{
+  "artifacts": {
+    "hpl_mailbox": 1,
+    "hpl_validator_announce": 2,
+    "hpl_ism_aggregate": 3,
+    "hpl_ism_multisig": 4,
+    "hpl_ism_pausable": 5,
+    "hpl_ism_routing": 6,
+    "hpl_igp": 7,
+    "hpl_hook_aggregate": 8,
+    "hpl_hook_fee": 9,
+    "hpl_hook_merkle": 10,
+    "hpl_hook_pausable": 11,
+    "hpl_hook_routing": 12,
+    "hpl_hook_routing_custom": 13,
+    "hpl_hook_routing_fallback": 14,
+    "hpl_test_mock_hook": 15,
+    "hpl_test_mock_ism": 16,
+    "hpl_test_mock_msg_receiver": 17,
+    "hpl_igp_oracle": 18,
+    "hpl_warp_cw20": 19,
+    "hpl_warp_native": 20
+  },
+  "deployments": {
+    "core": {
+      "mailbox": {
+        "type": "hpl_mailbox",
+        "address": "manifest1hz3svgdhmv67lsqlduu0tcnd3f75c0xr0mu48l6ywuwlz43zssjqe8l2x7",
+        "hexed": "0xb8a30621b7db35efc01f6f38f5e26d8a7d4c3cc37ef953ff44771df156228424"
+      },
+      "validator_announce": {
+        "type": "hpl_validator_announce",
+        "address": "manifest14v73z8ltt9sekglxrjfsk9fjzc95ag0cspk3aphqsax8l6c6kcaqra8yum",
+        "hexed": "0xab3d111feb59619b23e61c930b1532160b4ea1f8806d1e86e0874c7feb1ab63a"
+      }
+    },
+    "isms": {
+      "type": "hpl_ism_routing",
+      "address": "manifest1z0vhf55k8lhdp4tk3pjtpnkwyf75quwkzuld5l6eyphjjth0s62sghceu3",
+      "hexed": "0x13d974d2963feed0d5768864b0cece227d4071d6173eda7f59206f292eef8695",
+      "isms": {
+        "domain": 0,
+        "route": {
+          "type": "hpl_ism_multisig",
+          "address": "manifest1e7sgpxr50rlxarvjt07n0pxgxre5fcgannucx37309446x5pwacszpx58p",
+          "hexed": "0xcfa080987478fe6e8d925bfd3784c830f344e11d9cf98347d1796b5d1a817771"
+        }
+      }
+    },
+    "hooks": {
+      "default": {
+        "type": "hpl_hook_aggregate",
+        "address": "manifest16h97hnasfu6zz03t4kppxtxz30k3zzu2q79hq27pfp0vunathtpqhq0pxd",
+        "hexed": "0xd5cbebcfb04f34213e2bad82132cc28bed110b8a078b702bc1485ece4fabbac2",
+        "hooks": [
+          {
+            "type": "hpl_hook_merkle",
+            "address": "manifest1mz8tpklm6es2fzv3z02u6yf05rvd44tzy9xrk2phsnajgtmne6hqzg5mt2",
+            "hexed": "0xd88eb0dbfbd660a4899113d5cd112fa0d8dad562214c3b283784fb242f73ceae"
+          },
+          {
+            "type": "hpl_igp",
+            "address": "manifest1ftkqelwnnpxvharc9enhkd8m3f934uc3vyc2tjj6899g3c52ry3svg2lhu",
+            "hexed": "0x4aec0cfdd3984ccbf4782e677b34fb8a4b1af3116130a5ca5a394a88e28a1923",
+            "oracle": {
+              "type": "hpl_igp_oracle",
+              "address": "manifest1udulklye7hr9gvkkrgqsl9gvu3v2ftt4ysvsamv69hlxqvkkzk7sk4697z",
+              "hexed": "0xe379fb7c99f5c65432d61a010f950ce458a4ad7524190eed9a2dfe6032d615bd"
+            }
+          }
+        ]
+      },
+      "required": {
+        "type": "hpl_hook_aggregate",
+        "address": "manifest1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvas7uqdm5",
+        "hexed": "0x359f0399165cca6a31d842e4d3005d6a0e74a271884fc2e261699d9db0d0c33b",
+        "hooks": [
+          {
+            "type": "hpl_hook_pausable",
+            "address": "manifest167uml4e6gnhekqptd5r352q9c2mc4tyhmx3u7zwcydwvnaljurts5r46v9",
+            "hexed": "0xd7b9bfd73a44ef9b002b6d071a2805c2b78aac97d9a3cf09d8235cc9f7f2e0d7"
+          },
+          {
+            "type": "hpl_hook_fee",
+            "address": "manifest1fnqh90wx5qqc889gemwmssjdunfq7h9mqjadj3sulj3e8h865gjqyff6et",
+            "hexed": "0x4cc172bdc6a001839ca8ceddb8424de4d20f5cbb04bad9461cfca393dcfaa224"
+          }
+        ]
+      }
+    },
+    "warp": {
+      "native": [],
+      "cw20": []
+    },
+    "test": {
+      "msg_receiver": {
+        "type": "hpl_test_mock_msg_receiver",
+        "address": "manifest1egmkl7yl8z23h5hl5ut99evxdq232zxasqj0ed7e7v5cavmer42s253ccx",
+        "hexed": "0xca376ff89f38951bd2ffa71652e58668151508dd8024fcb7d9f3298eb3791d55"
+      }
+    }
+  }
+}

@@ -208,6 +208,7 @@ export async function getSigningClient(networkId: string): Promise<Client> {
 
   const [account] = await wallet.getAccounts();
 
+
   const gasPrice = GasPrice.fromString(`${gas.price}${gas.denom}`);
 
   const injective = new MsgBroadcasterWithPk({
@@ -216,7 +217,7 @@ export async function getSigningClient(networkId: string): Promise<Client> {
   });
 
   // TODO: figure out how to derive this
-  const injective_signer = "inj1xe7h6urta6mftjl8ncud2fv42wgdtdad8ackjm";
+  const injective_signer = "manifest1vmqas4maw7lg9clqu6kqu9zq9cluvllnr0jew9";
 
   const wasm = await SigningCosmWasmClient.connectWithSigner(
     endpoint.rpc,
@@ -231,6 +232,9 @@ export async function getSigningClient(networkId: string): Promise<Client> {
 
   const pubkey = Secp256k1.uncompressPubkey(account.pubkey);
   const ethaddr = keccak256(pubkey.slice(1)).slice(-20);
+
+  const signer_addr = Buffer.from(ethaddr).toString('hex');
+  const signer_pubkey = Buffer.from(account.pubkey).toString('hex');
 
   return {
     wasm,

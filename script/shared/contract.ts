@@ -24,6 +24,31 @@ export async function deployContract<T extends ContractNames>(
   try {
     const codeId = ctx.artifacts[contractName];
 
+    const res = await wasm.instantiate(
+      signer,
+      codeId,
+      initMsg,
+      `cw-hpl: ${contractName}`,
+      'auto',
+    );
+    const receipt = await waitTx(res.transactionHash, stargate);
+    if (receipt.code > 0) {
+      logger.error(
+        'deploy tx failed.',
+        `contract=${contractName}, hash=${receipt.hash}`,
+      );
+      throw new Error(JSON.stringify(receipt.events));
+    }
+
+    logger.info(`deployed ${contractName} at ${res.contractAddress}`);
+    return {
+      type: contractName,
+      address: res.contractAddress,
+      hexed: extractByte32AddrFromBech32(res.contractAddress),
+    };
+
+    // Unused injective implementation
+    /*
     const msg = MsgInstantiateContract.fromJSON({
       sender: injective_signer,
       admin: injective_signer,
@@ -49,29 +74,8 @@ export async function deployContract<T extends ContractNames>(
       address,
       hexed: extractByte32AddrFromBech32(address),
     };
+    */
 
-    const res = await wasm.instantiate(
-      signer,
-      codeId,
-      initMsg,
-      `cw-hpl: ${contractName}`,
-      'auto',
-    );
-    const receipt = await waitTx(res.transactionHash, stargate);
-    if (receipt.code > 0) {
-      logger.error(
-        'deploy tx failed.',
-        `contract=${contractName}, hash=${receipt.hash}`,
-      );
-      throw new Error(JSON.stringify(receipt.events));
-    }
-
-    logger.info(`deployed ${contractName} at ${res.contractAddress}`);
-    return {
-      type: contractName,
-      address: res.contractAddress,
-      hexed: extractByte32AddrFromBech32(res.contractAddress),
-    };
   } catch (e) {
     logger.error(`failed to deploy contract. retrying after ${retryAfter}ms`);
     logger.error('=> error: ', e);
@@ -125,25 +129,6 @@ export async function executeMultiMsg(
     ]),
   );
 
-  let executeMessages = msgs.map((v) => MsgExecuteContract.fromJSON({
-    sender: injective_signer,
-    contractAddress: v.contract.address,
-    msg: v.msg,
-  }));
-
-  // avoid exceeding block gas limit
-  const CHUNK_SIZE = 20;
-  while (executeMessages.length > 0) {
-    const chunk = executeMessages.splice(0, CHUNK_SIZE);
-    const resp = await injective.broadcast({
-      msgs: chunk
-    });
-    console.log({resp});
-  }
-
-  // @ts-ignore
-  return;
-
   const res = await wasm.executeMultiple(
     signer,
     msgs.map((v) => ({
@@ -169,4 +154,23 @@ export async function executeMultiMsg(
     ]),
   );
   return receipt;
+
+  // Unused injective implementation
+  /*
+  let executeMessages = msgs.map((v) => MsgExecuteContract.fromJSON({
+    sender: injective_signer,
+    contractAddress: v.contract.address,
+    msg: v.msg,
+  }));
+
+  // avoid exceeding block gas limit
+  const CHUNK_SIZE = 20;
+  while (executeMessages.length > 0) {
+    const chunk = executeMessages.splice(0, CHUNK_SIZE);
+    const resp = await injective.broadcast({
+      msgs: chunk
+    });
+    console.log({resp});
+  }
+  */
 }

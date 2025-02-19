@@ -1,4 +1,16 @@
 networks:
+  - id: 'manifest-ledger-testnet'
+    hrp: 'manifest'
+    signer: deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+    endpoint:
+      rpc: 'http://localhost:26657'
+      rest: 'http://localhost:1317'
+      grpc: 'http://localhost:9090'
+    gas:
+      price: '0.025'
+      denom: 'umfx'
+    domain: 2347 # manifest-ledger-testnet -> ascii / decimal -> sum
+
   - id: 'localwasmd'
     hrp: 'uwasm'
     signer: deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
