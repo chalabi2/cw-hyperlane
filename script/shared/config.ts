@@ -5,6 +5,8 @@ import {
   DirectSecp256k1Wallet,
 } from '@cosmjs/proto-signing';
 import { GasPrice, SigningStargateClient } from '@cosmjs/stargate';
+import { Network } from '@injectivelabs/networks';
+import { MsgBroadcasterWithPk } from '@injectivelabs/sdk-ts';
 import { readFileSync } from 'fs';
 import yaml from 'js-yaml';
 
@@ -150,9 +152,6 @@ export type Config = {
   };
 };
 
-import { Network } from "@injectivelabs/networks";
-import { MsgBroadcasterWithPk } from '@injectivelabs/sdk-ts';
-
 export class Client {
   wasm: SigningCosmWasmClient;
   stargate: SigningStargateClient;
@@ -208,16 +207,15 @@ export async function getSigningClient(networkId: string): Promise<Client> {
 
   const [account] = await wallet.getAccounts();
 
-
   const gasPrice = GasPrice.fromString(`${gas.price}${gas.denom}`);
 
   const injective = new MsgBroadcasterWithPk({
     privateKey: signer,
-    network: Network.Mainnet
+    network: Network.Mainnet,
   });
 
   // TODO: figure out how to derive this
-  const injective_signer = "manifest1vmqas4maw7lg9clqu6kqu9zq9cluvllnr0jew9";
+  const injective_signer = 'manifest1uwqjtgjhjctjc45ugy7ev5prprhehc7wclherd';
 
   const wasm = await SigningCosmWasmClient.connectWithSigner(
     endpoint.rpc,

@@ -25,65 +25,65 @@
     "core": {
       "mailbox": {
         "type": "hpl_mailbox",
-        "address": "manifest1hz3svgdhmv67lsqlduu0tcnd3f75c0xr0mu48l6ywuwlz43zssjqe8l2x7",
-        "hexed": "0xb8a30621b7db35efc01f6f38f5e26d8a7d4c3cc37ef953ff44771df156228424"
+        "address": "manifest1y6hjq8yvqzk6al4yrjl7yjkt87ujvhaq32c0qvt7627sk0j63d2qxpacxf",
+        "hexed": "0x26af201c8c00adaefea41cbfe24acb3fb9265fa08ab0f0317ed2bd0b3e5a8b54"
       },
       "validator_announce": {
         "type": "hpl_validator_announce",
-        "address": "manifest14v73z8ltt9sekglxrjfsk9fjzc95ag0cspk3aphqsax8l6c6kcaqra8yum",
-        "hexed": "0xab3d111feb59619b23e61c930b1532160b4ea1f8806d1e86e0874c7feb1ab63a"
+        "address": "manifest1axw5he6ktvz8rgacec3ldxmegy0urn0xevsysl7e0hx6dx90er6qck8ms6",
+        "hexed": "0xe99d4be7565b0471a3b8ce23f69b79411fc1cde6cb20487fd97dcda698afc8f4"
       }
     },
     "isms": {
       "type": "hpl_ism_routing",
-      "address": "manifest1z0vhf55k8lhdp4tk3pjtpnkwyf75quwkzuld5l6eyphjjth0s62sghceu3",
-      "hexed": "0x13d974d2963feed0d5768864b0cece227d4071d6173eda7f59206f292eef8695",
+      "address": "manifest188hyafskrej22uv8pnxf54l7598d580dgvn97nuzcxmcn3kc782q5x3rkz",
+      "hexed": "0x39ee4ea6161e64a571870ccc9a57fea14eda1ded43265f4f82c1b789c6d8f1d4",
       "isms": {
         "domain": 0,
         "route": {
           "type": "hpl_ism_multisig",
-          "address": "manifest1e7sgpxr50rlxarvjt07n0pxgxre5fcgannucx37309446x5pwacszpx58p",
-          "hexed": "0xcfa080987478fe6e8d925bfd3784c830f344e11d9cf98347d1796b5d1a817771"
+          "address": "manifest13yf2vxas6m58wetjt8g2w5wv0u0hj6vqfyjv68qkswrddjvkms8qutmeuu",
+          "hexed": "0x8912a61bb0d6e877657259d0a751cc7f1f7969804924cd1c168386d6c996dc0e"
         }
       }
     },
     "hooks": {
       "default": {
         "type": "hpl_hook_aggregate",
-        "address": "manifest16h97hnasfu6zz03t4kppxtxz30k3zzu2q79hq27pfp0vunathtpqhq0pxd",
-        "hexed": "0xd5cbebcfb04f34213e2bad82132cc28bed110b8a078b702bc1485ece4fabbac2",
+        "address": "manifest1gd54cnu80s8qdqcyhyvn06m87vlmch2uf4wvz4z08svawvc2rhys0zkfr7",
+        "hexed": "0x43695c4f877c0e068304b91937eb67f33fbc5d5c4d5cc1544f3c19d7330a1dc9",
         "hooks": [
           {
             "type": "hpl_hook_merkle",
-            "address": "manifest1mz8tpklm6es2fzv3z02u6yf05rvd44tzy9xrk2phsnajgtmne6hqzg5mt2",
-            "hexed": "0xd88eb0dbfbd660a4899113d5cd112fa0d8dad562214c3b283784fb242f73ceae"
+            "address": "manifest13vg9te3p4znkws04l6j497p33ef4yrgctdw0myyvefc8dnx4ce8s090vr4",
+            "hexed": "0x8b1055e621a8a76741f5fea552f8318e53520d185b5cfd908cca7076ccd5c64f"
           },
           {
             "type": "hpl_igp",
-            "address": "manifest1ftkqelwnnpxvharc9enhkd8m3f934uc3vyc2tjj6899g3c52ry3svg2lhu",
-            "hexed": "0x4aec0cfdd3984ccbf4782e677b34fb8a4b1af3116130a5ca5a394a88e28a1923",
+            "address": "manifest17fr8awnysyv3nt5je4strczdupssl8u9jqam890jfv72sh32yyqqp2f58v",
+            "hexed": "0xf2467eba64811919ae92cd60b1e04de0610f9f85903bb395f24b3ca85e2a2100",
             "oracle": {
               "type": "hpl_igp_oracle",
-              "address": "manifest1udulklye7hr9gvkkrgqsl9gvu3v2ftt4ysvsamv69hlxqvkkzk7sk4697z",
-              "hexed": "0xe379fb7c99f5c65432d61a010f950ce458a4ad7524190eed9a2dfe6032d615bd"
+              "address": "manifest153vp64h0jlenzwspje0qza5lz8px9sdf63hcdaljtqcghewgl32sklzs44",
+              "hexed": "0xa4581d56ef97f3313a01965e01769f11c262c1a9d46f86f7f258308be5c8fc55"
             }
           }
         ]
       },
       "required": {
         "type": "hpl_hook_aggregate",
-        "address": "manifest1xk0s8xgktn9x5vwcgtjdxqzadg88fgn33p8u9cnpdxwemvxscvas7uqdm5",
-        "hexed": "0x359f0399165cca6a31d842e4d3005d6a0e74a271884fc2e261699d9db0d0c33b",
+        "address": "manifest14kajny4tg2yav6a3wtzywwl2zwpdnnl8e5tmvahk3ulnt7w2gfxs8z3mdm",
+        "hexed": "0xadbb2992ab4289d66bb172c4473bea1382d9cfe7cd17b676f68f3f35f9ca424d",
         "hooks": [
           {
             "type": "hpl_hook_pausable",
-            "address": "manifest167uml4e6gnhekqptd5r352q9c2mc4tyhmx3u7zwcydwvnaljurts5r46v9",
-            "hexed": "0xd7b9bfd73a44ef9b002b6d071a2805c2b78aac97d9a3cf09d8235cc9f7f2e0d7"
+            "address": "manifest18nwjauhgpmfsjf8c4yea0mfj74n6dhy0wkqzydtvvhkmr7gqzxts0yjqkc",
+            "hexed": "0x3cdd2ef2e80ed30924f8a933d7ed32f567a6dc8f758022356c65edb1f9001197"
           },
           {
             "type": "hpl_hook_fee",
-            "address": "manifest1fnqh90wx5qqc889gemwmssjdunfq7h9mqjadj3sulj3e8h865gjqyff6et",
-            "hexed": "0x4cc172bdc6a001839ca8ceddb8424de4d20f5cbb04bad9461cfca393dcfaa224"
+            "address": "manifest1nmfkl4rhtzkgdy20vsx2cwckfvf7ujqzha2fh62ydn9yqe54cqjs0r9cqw",
+            "hexed": "0x9ed36fd47758ac86914f640cac3b164b13ee4802bf549be9446cca406695c025"
           }
         ]
       }
@@ -95,8 +95,8 @@
     "test": {
       "msg_receiver": {
         "type": "hpl_test_mock_msg_receiver",
-        "address": "manifest1egmkl7yl8z23h5hl5ut99evxdq232zxasqj0ed7e7v5cavmer42s253ccx",
-        "hexed": "0xca376ff89f38951bd2ffa71652e58668151508dd8024fcb7d9f3298eb3791d55"
+        "address": "manifest10rdaqsayjsglmdvlsrhs3xdgygwrujjl8n97qm263gysaa9rh58q4gq2yv",
+        "hexed": "0x78dbd043a49411fdb59f80ef0899a8221c3e4a5f3ccbe06d5a8a090ef4a3bd0e"
       }
     }
   }
